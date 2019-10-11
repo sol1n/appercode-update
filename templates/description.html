@@ -1,0 +1,58 @@
+{% if imageFileId %}
+    <div class="company_logo">
+        <img src="https://api.appercode.com/v1/yarmarkaleroymerlin/files/{{ imageFileId }}/download/{{ imageFileId }}.jpg" style="width: 100%;">
+    </div>
+{% endif %}
+
+<div class="app_wrapper">
+    {% if company %}
+        <div class="company">
+            <h4><b>Деятельности компании</b></h4>
+            <p>{{ company }}</p>
+        </div>
+    {% endif %}
+
+    {% if directions %}
+        <div class="directions">
+            <h4><b>Основные товарные направления</b></h4>
+            <p>{{ directions }}</p>
+        </div>
+    {% endif %}
+
+    {% if place %}
+        <div class="place">
+            <h4><b>Место на выставке</b></h4>
+            <p>{{ place }}</p>
+        </div>
+    {% endif %}
+</div>
+
+{% if site or catalog %}
+    <div class="links">
+        <div class="links__title">
+            Ссылки
+        </div>
+
+        {% if site %}
+            <div class="links__element">
+                <div class="links__icon">
+                    <img src="https://api.appercode.com/v1/demo/files/1839ff24-71b9-4530-9de1-f0f882253d57/download/link.svg" alt="">
+                </div>
+                <div class="site_company links__content">
+                    <a href="{{ site }}">Сайт компании</a>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if catalog %}
+            <div class="links__element">
+                <div class="links__icon">
+                    <img src="https://api.appercode.com/v1/demo/files/1839ff24-71b9-4530-9de1-f0f882253d57/download/link.svg" alt="">
+                </div>
+                <div class="catalog_company links__content">
+                    <a href="{{ catalog }}">Каталог</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
